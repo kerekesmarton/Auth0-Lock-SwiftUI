@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Auth0-Lock-SwiftUI'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Allows Auth0`s Lock ui to be used in SwiftUI.'
 
 # This description is used to generate tags and improve search results.
