@@ -1,0 +1,38 @@
+PODS:
+  - Auth0 (1.25.0):
+    - JWTDecode
+    - SimpleKeychain
+  - Auth0-Lock-SwiftUI (0.1.0):
+    - Lock
+  - JWTDecode (2.4.1)
+  - Lock (2.17.1):
+    - Auth0
+    - Lock/Classic (= 2.17.1)
+  - Lock/Classic (2.17.1):
+    - Auth0
+  - SimpleKeychain (0.11.1)
+
+DEPENDENCIES:
+  - Auth0-Lock-SwiftUI (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Auth0
+    - JWTDecode
+    - Lock
+    - SimpleKeychain
+
+EXTERNAL SOURCES:
+  Auth0-Lock-SwiftUI:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Auth0: 358dbd972851942cf4a5e5ce8cd14bcd3ad969fa
+  Auth0-Lock-SwiftUI: e99090dd1c29ea7187008dd49988f08bae86a20f
+  JWTDecode: 4bd4da0cdf0f8154fd467fa48499f34ec057fb88
+  Lock: 2493fe6c34e7d5d495d7c96b5ca5bf6515a4e4a0
+  SimpleKeychain: 0c657949c7afff92337d2ff64052d5eb5c53823e
+
+PODFILE CHECKSUM: bf0c0bee994ffca0a0a026fba1a35c7aee669bea
+
+COCOAPODS: 1.9.1

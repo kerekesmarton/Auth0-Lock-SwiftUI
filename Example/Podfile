@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'Auth0-Lock-SwiftUI_Example' do
+  pod 'Auth0-Lock-SwiftUI', :path => '../'
+
+  target 'Auth0-Lock-SwiftUI_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
