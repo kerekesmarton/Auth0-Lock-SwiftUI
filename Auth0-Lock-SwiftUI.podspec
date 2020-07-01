@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'Auth0-Lock-SwiftUI'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of Auth0-Lock-SwiftUI.'
+  s.summary          = 'Allows Auth0`s Lock ui to be used in SwiftUI.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Marton Kerekes' => 'kerekes.j.marton@gmail.com' }
-  s.source           = { :git => 'https://github.com/Marton Kerekes/Auth0-Lock-SwiftUI.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/kerekesmarton/Auth0-Lock-SwiftUI.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '13.0'
