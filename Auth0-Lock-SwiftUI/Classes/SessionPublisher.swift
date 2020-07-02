@@ -11,7 +11,7 @@ public class SessionPublisher: ObservableObject {
     private var userInfo: UserInfo?
     
     public enum SessionViewModel {
-        case hasSession(user: UserInfo)
+        case hasSession(user: UserInfo, credentials: Credentials)
         case loading
         case guest
         case error(String)
@@ -61,7 +61,7 @@ public class SessionPublisher: ObservableObject {
                 switch result {
                 case .success( let userInfo):
                     self.save(userInfo)
-                    self.publish(viewModel: .hasSession(user: userInfo))
+                    self.publish(viewModel: .hasSession(user: userInfo, credentials: credentials))
                 case .failure(let error):
                     self.publish(viewModel: .error(AuthError(from: error).rawValue))
                 }

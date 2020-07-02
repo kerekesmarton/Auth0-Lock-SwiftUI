@@ -31,9 +31,12 @@ struct SessionView: View {
             }.sheet(isPresented: $showingLogin) {
                 AuthView(session: self.session)
             }.padding().anyView
-        case .hasSession(user: let userName):
-            return VStack {
-                Text("Welcome \(userName)!")
+        case .hasSession(user: let userName, let credentials):
+            return VStack(alignment: .center, spacing: 32) {
+                Text("Welcome \(userName.name!)!")
+                
+                Text("Your token expires in \(credentials.expiresIn!)")
+                
                 Button.init("Logout") {
                     self.session.logout()
                 }
