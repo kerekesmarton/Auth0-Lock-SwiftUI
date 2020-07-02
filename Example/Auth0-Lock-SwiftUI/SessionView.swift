@@ -41,9 +41,3 @@ struct SessionView: View {
         }
     }
 }
-
-fileprivate extension UserInfo {
-    var shortName: String {
-        preferredUsername ?? name ?? nickname ?? ""
-    }
-}

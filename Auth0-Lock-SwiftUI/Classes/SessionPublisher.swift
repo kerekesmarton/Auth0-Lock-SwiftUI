@@ -19,8 +19,6 @@ public class SessionPublisher: ObservableObject {
     
     @Published public var viewModel: SessionViewModel
     
-    private var cancellableSet: Set<AnyCancellable> = []
-    
     public init() {
         viewModel = .loading
         manager.credentials { (error, credentials) in
