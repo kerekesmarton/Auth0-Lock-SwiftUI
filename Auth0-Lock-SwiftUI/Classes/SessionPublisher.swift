@@ -22,8 +22,8 @@ public class SessionPublisher: ObservableObject {
     public init() {
         viewModel = .loading
         manager.credentials { (error, credentials) in
-            if let error = error {
-                self.viewModel = .error(AuthError(from: error).rawValue)
+            if let error = error, let authError = AuthError(from: error)?.rawValue {
+                self.viewModel = .error(authError)
             } else if let credentials = credentials {
                 self.save(credentials)
                 self.retrieveUserInfo(credentials: credentials)
@@ -63,7 +63,11 @@ public class SessionPublisher: ObservableObject {
                     self.save(userInfo)
                     self.publish(viewModel: .hasSession(user: userInfo, credentials: credentials))
                 case .failure(let error):
-                    self.publish(viewModel: .error(AuthError(from: error).rawValue))
+                    guard let authError = AuthError(from: error)?.rawValue else {
+                        self.publish(viewModel: .error("Something went wrong"))
+                        return
+                    }
+                    self.publish(viewModel: .error(authError))
                 }
                 
         }
@@ -97,14 +101,14 @@ enum AuthError: String {
     case touchFailed = "Touch id failed"
     case revokeFailed = "Failed to revoke"
     
-    init(from error: Error) {
+    init?(from error: Error) {
         
         if let error = error as? AuthenticationError, let authError = AuthError.tryAuthError(from: error) {
             self = authError
         } else if let error = error as? CredentialsManagerError {
             self = AuthError.tryManagerError(from: error)
         } else {
-            self = .unknown
+            return nil
         }
     }
     
